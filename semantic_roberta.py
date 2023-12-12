@@ -44,7 +44,7 @@ def get_similarity_scores_triples(triples):
         model_output = model(**encoded_input)
         sentence_embeddings = mean_pooling(model_output, encoded_input['attention_mask'])
 
-        sentence_embeddings = sentence_embeddings.detach().numpy()
+        sentence_embeddings = sentence_embeddings.detach().cpu().numpy()
 
     return(cosine_similarity(sentence_embeddings, sentence_embeddings))
     
@@ -58,7 +58,7 @@ def get_topk_similar_evidences(claim, evidences, k=1):
         model_output = model(**encoded_input)
         sentence_embeddings = mean_pooling(model_output, encoded_input['attention_mask'])
 
-        sentence_embeddings = sentence_embeddings.detach().numpy()
+        sentence_embeddings = sentence_embeddings.detach().cpu().numpy()
     
     sim_scores = cosine_similarity([sentence_embeddings[0]], sentence_embeddings[1:])[0]
 
