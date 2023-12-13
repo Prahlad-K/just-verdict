@@ -4,7 +4,6 @@ import torch
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 tokenizer = MvpTokenizer.from_pretrained("RUCAIBox/mvp")
-model = MvpForConditionalGeneration.from_pretrained("RUCAIBox/mvp").to(device)
 model_with_mtl = MvpForConditionalGeneration.from_pretrained("RUCAIBox/mtl-data-to-text").to(device)
 
 
@@ -32,13 +31,10 @@ def get_justification_statement(claim, evidence, verdict):
         return_tensors="pt",
     ).to(device)
 
-    generated_ids = model.generate(**inputs, max_length=64)
-    generated_answer1 = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)
-
     generated_ids = model_with_mtl.generate(**inputs, max_length=64)
-    generated_answer2 = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)
+    generated_answer = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)
 
-    return generated_answer1[0], generated_answer2[0]
+    return generated_answer[0]
 
 # claim_evidence_verdicts = [('(A baby died at an unnamed medical facility, participant, its parents)', '(Confederate, owner of, Confederate flag)', -1), ('(Black Saturday, has effect, Black Lives Matter)', '(cardiac event, has effect, death)', -1)]
 
