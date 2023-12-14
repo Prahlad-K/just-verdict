@@ -137,6 +137,9 @@ def from_text_to_kb(text, span_length=128, verbose=False):
         current_span_index = i // num_return_sequences
         relations = extract_relations_from_model_output(sentence_pred)
         for relation in relations:
+            relation["meta"] = {
+                "spans": [spans_boundaries[current_span_index]]
+            }
             kb.add_relation(relation)
         i += 1
 
