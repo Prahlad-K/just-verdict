@@ -70,9 +70,3 @@ def get_topk_similar_evidences(claim, evidences, k=1):
     # print(topk_evidences)
 
     return topk_evidences
-
-claim = "(flat, facet of, earth)"
-evidences = ["(round, part of, earth)",
-             "(earth is round, creator, NASA)"
-             ]
-get_topk_similar_evidences(claim, evidences, k=3)

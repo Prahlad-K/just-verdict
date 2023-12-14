@@ -9,16 +9,24 @@ model_with_mtl = MvpForConditionalGeneration.from_pretrained("RUCAIBox/mtl-data-
 
 def get_justification_statement(claim, evidence, verdict):
     claim_parts = claim[1:-1].split(', ')
-    evidence_parts = evidence[1:-1].split(', ')
 
+    if len(evidence) > 1:
+        evidence_parts = evidence[1:-1].split(', ')
+    else:
+        evidence_parts = []
+    
     if verdict == -1:
         claim_parts[1] = 'NOT ' + claim_parts[1].upper()
     else:
         claim_parts[1] = claim_parts[1].upper()
         
-    evidence_parts[1] = evidence_parts[1].upper()
     formatted_claim = ' | '.join(claim_parts)
-    formatted_evidence = ' | '.join(evidence_parts)
+
+    if len(evidence_parts) > 1:
+        evidence_parts[1] = evidence_parts[1].upper()
+        formatted_evidence = ' | '.join(evidence_parts)
+    else:
+        formatted_evidence = ""
 
     verdict_text = ' [SEP] because '
 

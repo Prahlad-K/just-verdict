@@ -22,14 +22,6 @@ def get_entailment(evidence_claim_pairs):
     # print(labels)
     return normalized_scores
 
-# evidence_claim_pairs = [("(round, shape of, earth)", "(flat, shape of, earth)"), ("(round, shape of, earth)", "(spherical, shape of, ball)")]
-# evidence_claim_pairs2 = [("(pizza, shape, circle)", "(round, shape of, pizza)"), ("(night, lacks, sunlight)", "(night, has, moon)")]
+# evidence_claim_pairs = [("Earth is round", "Sky is blue")]
 
-# start = time.time()
-# get_entailment(evidence_claim_pairs)
-# end1 = time.time()
-# get_entailment(evidence_claim_pairs2)
-# end2 = time.time()
-
-# print(end1-start)
-# print(end2-end1)
+# print(get_entailment(evidence_claim_pairs))
