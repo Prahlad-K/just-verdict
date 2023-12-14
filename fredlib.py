@@ -1,3 +1,4 @@
+# START: COPIED FROM http://wit.istc.cnr.it/stlab-tools/fred/
 import os
 import sys
 import rdflib
@@ -702,4 +703,4 @@ if __name__ == "__main__":
             print ("}")
 
     g = checkFredSentence('The radio said that Pippo went to France', sys.argv[1],'pippo.rdf')
-
+# END: COPIED FROM http://wit.istc.cnr.it/stlab-tools/fred/

@@ -90,14 +90,26 @@ elif config['kg_creation'] == 'FRED':
     # Throttle limits!
     time.sleep(12)
     evidence_kg = capture_FRED_kg(evidence, "./data/fred/examples/evidence.rdf")
+    if claim_kg is None or len(claim_kg)==0:
+        claim_kg = backup_claim_kg
+    if evidence_kg is None or len(evidence_kg)==0:
+        evidence_kg = backup_evidence_kg
 
 elif config['kg_creation'] == 'SPACY':
     claim_kg = generate_spacy_kgs(claim)
     evidence_kg = generate_spacy_kgs(evidence)
+    if claim_kg is None or len(claim_kg)==0:
+        claim_kg = backup_claim_kg
+    if evidence_kg is None or len(evidence_kg)==0:
+        evidence_kg = backup_evidence_kg
 
 elif config['kg_creation'] == 'LLAMA':
     claim_kg = generate_kg_from_llama(claim)
     evidence_kg = generate_kg_from_llama(evidence)
+    if claim_kg is None or len(claim_kg)==0:
+        claim_kg = backup_claim_kg
+    if evidence_kg is None or len(evidence_kg)==0:
+        evidence_kg = backup_evidence_kg
 
 else:
     print('Incorrect specification for config kg_creation, can only be one of REBEL, FRED, SPACY or LLAMA. Please re-try.')
@@ -105,15 +117,30 @@ else:
 
 print('Created claim and evidence knowledge graphs......')
 
-cleaned_claim_triples = get_cleaned_triples(claim_kg)
-cleaned_evidence_triples = get_cleaned_triples(evidence_kg)
+if config['avoid_redundancy_removal']:
+    cleaned_claim_triples = get_cleaned_triples(claim_kg, clean=False)
+    cleaned_evidence_triples = get_cleaned_triples(evidence_kg,clean=False)
 
-print('Cleaned both knowledge graphs to avoid redundancies......')
+    print('Skipped cleaning both knowledge graphs, outputs may sound redundant......')
+else:
+    cleaned_claim_triples = get_cleaned_triples(claim_kg)
+    cleaned_evidence_triples = get_cleaned_triples(evidence_kg)
 
-claim_evidence_pairs = pair_most_related_evidence(cleaned_claim_triples, cleaned_evidence_triples, 1)
-entailment_scores = get_entailment_scores(claim_evidence_pairs)
+    print('Cleaned both knowledge graphs to avoid redundancies......')
 
-print('Completed evidence retrieval and entailment scoring......')
+if config['randomize_evidence_retrieval']:
+    k = config['top_k_evidences']
+    claim_evidence_pairs = pair_most_related_evidence(cleaned_claim_triples, cleaned_evidence_triples, 1, randomize=True)
+    entailment_scores = get_entailment_scores(claim_evidence_pairs)
+
+    print('Randomized evidence retrieval and completed entailment scoring......')
+
+else:
+    k = config['top_k_evidences']
+    claim_evidence_pairs = pair_most_related_evidence(cleaned_claim_triples, cleaned_evidence_triples, 1)
+    entailment_scores = get_entailment_scores(claim_evidence_pairs)
+
+    print('Completed evidence retrieval and entailment scoring......')
 
 verdict_actual = 1 if label_actual=='true' else (-1 if label_actual=='false' else 0)
 verdict_predicted = get_verdict(entailment_scores)
