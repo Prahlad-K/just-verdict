@@ -1,5 +1,6 @@
 {
-    "kg_creation" : "REBEL",
+    "kg_creation" : "LLAMA",
     "avoid_redundancy_removal" : false,
-    "randomize_evidence_retrieval" : false
+    "randomize_evidence_retrieval" : false,
+    "top_k_evidences" : 1
 }
