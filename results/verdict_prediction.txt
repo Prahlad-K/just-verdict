@@ -1,0 +1,102 @@
+BASELINE PUBHEALTH-SciBERT
+    All scores below are macro aggregated. 
+    These results were taken from the paper "Explainable Automated Fact Checking for Public Health Claims" - https://aclanthology.org/2020.emnlp-main.623/
+    
+    Precision: 75.69
+    Recall: 66.20
+    F1-Score: 70.52
+    Accuracy: 69.73
+
+The following scores were taken from the "Verdict Prediction.ipynb" notebook.
+
+REBEL
+    With Redundancy Removal
+                precision    recall  f1-score   support
+
+    contradiction       0.28      0.27      0.27       768
+        support       0.47      0.59      0.52      1228
+            nei       0.20      0.07      0.11       456
+
+        accuracy                           0.39      2452
+        macro avg       0.31      0.31      0.30      2452
+    weighted avg       0.36      0.39      0.37      2452
+
+    Accuracy Score:  0.39110929853181076
+
+    Without Redundancy Removal
+                precision    recall  f1-score   support
+
+    contradiction       0.27      0.32      0.29       768
+        support       0.45      0.52      0.48      1228
+            nei       0.18      0.04      0.07       456
+
+        accuracy                           0.37      2452
+        macro avg       0.30      0.29      0.28      2452
+    weighted avg       0.34      0.37      0.34      2452
+
+    Accuracy Score:  0.3674551386623165
+
+    Entailment Randomized
+                precision    recall  f1-score   support
+
+    contradiction       0.33      0.62      0.43       768
+        support       0.52      0.33      0.40      1228
+            nei       0.19      0.09      0.12       456
+
+        accuracy                           0.38      2452
+        macro avg       0.34      0.35      0.32      2452
+    weighted avg       0.40      0.38      0.36      2452
+
+    Accuracy Score:  0.3756117455138662
+
+FRED
+    precision    recall  f1-score   support
+
+    contradiction       0.30      0.38      0.33       768
+        support       0.47      0.57      0.52      1228
+            nei       0.14      0.00      0.00       455
+
+        accuracy                           0.40      2451
+        macro avg       0.30      0.32      0.28      2451
+    weighted avg       0.36      0.40      0.36      2451
+
+    Accuracy Score:  0.40269277845777235
+
+SPACY
+    precision    recall  f1-score   support
+
+    contradiction       0.35      0.27      0.31       768
+        support       0.49      0.58      0.53      1228
+            nei       0.16      0.14      0.15       456
+
+        accuracy                           0.40      2452
+        macro avg       0.33      0.33      0.33      2452
+    weighted avg       0.38      0.40      0.39      2452
+
+    Accuracy Score:  0.40212071778140296
+
+LLAMA
+    precision    recall  f1-score   support
+
+    contradiction       0.29      0.28      0.28       768
+        support       0.48      0.66      0.56      1228
+            nei       0.27      0.01      0.02       456
+
+        accuracy                           0.42      2452
+        macro avg       0.34      0.32      0.29      2452
+    weighted avg       0.38      0.42      0.37      2452
+
+    Accuracy Score:  0.42088091353996737
+
+CHATGPT
+    precision    recall  f1-score   support
+
+    contradiction       0.36      0.31      0.33        13
+        support       0.52      0.71      0.60        24
+            nei       0.33      0.15      0.21        13
+
+        accuracy                           0.46        50
+        macro avg       0.40      0.39      0.38        50
+    weighted avg       0.43      0.46      0.43        50
+
+    Accuracy Score:  0.46

@@ -1,4 +1,6 @@
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+import transformers
+transformers.logging.set_verbosity_error()
 import torch
 import math
 

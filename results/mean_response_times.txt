@@ -1,0 +1,37 @@
+All times shown below are taken from times shown on Jupyter Notebook cells averaged over the number of claims and evidences.
+Thus, they are results obtained when optimized for vectorization.
+
+REBEL
+    Mean Time for KG Creation per Claim and Evidence: 1.05 seconds
+    Mean Time for Redundancy Removal: 0.14 seconds
+    Mean Time for Evidence Retrieval: 0.15 seconds
+    Mean Time for Entailment Scoring: 0.41 seconds
+    Mean Time to Respond per Claim and Evidence: 1.75 seconds
+
+FRED
+    Mean Time for KG Creation per Claim and Evidence: 3.72 seconds
+    Mean Time for Redundancy Removal: 0.64 seconds
+    Mean Time for Evidence Retrieval: 0.95 seconds
+    Mean Time for Entailment Scoring: 0.81 seconds
+    Mean Time to Respond per Claim and Evidence: 6.12 seconds
+
+SPACY
+    Mean Time for KG Creation per Claim and Evidence: 0.92 seconds
+    Mean Time for Redundancy Removal: 0.13 seconds
+    Mean Time for Evidence Retrieval: 0.11 seconds
+    Mean Time for Entailment Scoring: 0.37 seconds
+    Mean Time to Respond per Claim and Evidence: 1.53 seconds
+
+LLAMA
+    Mean Time for KG Creation per Claim and Evidence: 1.62 seconds
+    Mean Time for Redundancy Removal: 0.46 seconds
+    Mean Time for Evidence Retrieval: 0.29 seconds
+    Mean Time for Entailment Scoring: 0.52 seconds
+    Mean Time to Respond per Claim and Evidence: 2.89 seconds
+
+CHATGPT
+    Mean Time for KG Creation per Claim and Evidence: 1.49 seconds
+    Mean Time for Redundancy Removal: 0.73 seconds
+    Mean Time for Evidence Retrieval: 0.84 seconds
+    Mean Time for Entailment Scoring: 0.61 seconds
+    Mean Time to Respond per Claim and Evidence: 3.67 seconds
