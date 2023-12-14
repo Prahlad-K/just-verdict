@@ -1,6 +1,9 @@
 All times shown below are taken from times shown on Jupyter Notebook cells averaged over the number of claims and evidences.
 Thus, they are results obtained when optimized for vectorization.
 
+BASELINE PUBHEALTH: SciBERT + EXPLAINERFC-EXPERT
+    Mean Time to Respond per Claim and Evidence: 1.13 seconds + 2.95 seconds = 4.08 seconds
+
 REBEL
     Mean Time for KG Creation per Claim and Evidence: 1.05 seconds
     Mean Time for Redundancy Removal: 0.14 seconds
