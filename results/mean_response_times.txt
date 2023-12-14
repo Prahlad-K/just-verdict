@@ -12,11 +12,11 @@ REBEL
     Mean Time to Respond per Claim and Evidence: 1.75 seconds
 
 FRED
-    Mean Time for KG Creation per Claim and Evidence: 3.72 seconds
-    Mean Time for Redundancy Removal: 0.64 seconds
-    Mean Time for Evidence Retrieval: 0.95 seconds
-    Mean Time for Entailment Scoring: 0.81 seconds
-    Mean Time to Respond per Claim and Evidence: 6.12 seconds
+    Mean Time for KG Creation per Claim and Evidence: 1.32 seconds
+    Mean Time for Redundancy Removal: 0.34 seconds
+    Mean Time for Evidence Retrieval: 0.45 seconds
+    Mean Time for Entailment Scoring: 0.21 seconds
+    Mean Time to Respond per Claim and Evidence: 2.32 seconds
 
 SPACY
     Mean Time for KG Creation per Claim and Evidence: 0.92 seconds
@@ -29,12 +29,12 @@ LLAMA
     Mean Time for KG Creation per Claim and Evidence: 1.62 seconds
     Mean Time for Redundancy Removal: 0.46 seconds
     Mean Time for Evidence Retrieval: 0.29 seconds
-    Mean Time for Entailment Scoring: 0.52 seconds
-    Mean Time to Respond per Claim and Evidence: 2.89 seconds
+    Mean Time for Entailment Scoring: 0.42 seconds
+    Mean Time to Respond per Claim and Evidence: 2.79 seconds
 
 CHATGPT
-    Mean Time for KG Creation per Claim and Evidence: 1.49 seconds
-    Mean Time for Redundancy Removal: 0.73 seconds
-    Mean Time for Evidence Retrieval: 0.84 seconds
-    Mean Time for Entailment Scoring: 0.61 seconds
-    Mean Time to Respond per Claim and Evidence: 3.67 seconds
+    Mean Time for KG Creation per Claim and Evidence: 1.69 seconds
+    Mean Time for Redundancy Removal: 0.53 seconds
+    Mean Time for Evidence Retrieval: 0.34 seconds
+    Mean Time for Entailment Scoring: 0.29 seconds
+    Mean Time to Respond per Claim and Evidence: 2.85 seconds
