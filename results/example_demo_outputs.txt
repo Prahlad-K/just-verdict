@@ -1,0 +1,62 @@
+Example #1:
+    Claim: The earth is flat.
+    Evidence: The earth is round according to science.
+    Label Actual: false
+    Justification Actual: The earth is not flat, because according to science it is round.
+
+    Actual Verdict:  Contradicts
+    Predicted Verdict:  Contradicts
+
+    Actual Justification:  The earth is not flat, because according to science it is round.
+    Produced Justification:  Because earth is round is part of science.
+
+    Time Taken to Fact Check: 27.735023 seconds.
+
+Example #2
+    Claim: The sun is bright during the night
+    Evidence: The sun sets before night, therefore it is absent from the night sky
+    Label Actual: false
+    Justification Actual: The sun is not bright during the night because it is absent from the night sky
+
+    Actual Verdict:  Contradicts
+    Predicted Verdict:  Contradicts
+
+    Actual Justification:  The sun is not bright during the night because it is absent from the night sky
+    Produced Justification:  Because night is opposite of the sun, it is called night.
+
+    Time Taken to Fact Check: 26.296915 seconds.
+
+Example #3
+    Claim: New York City is in the east coast of the United States
+    Evidence: New York City is part of the New York state, a coastal region of the United States facing the Atlantic Ocean
+    Label Actual: true
+    Justification Actual: As New York City is a port city facing the Atlantic Ocean, it is in the east coast of the United States
+
+    Actual Verdict:  Supports
+    Predicted Verdict:  Supports
+
+    Actual Justification:  As New York City is a port city facing the Atlantic Ocean, it is in the east coast of the United States
+    Produced Justification:  New York City is not in the United States because New York state is. The east coast of the United States is located in or next to the body of water Atlantic Ocean.        
+
+    Time Taken to Fact Check: 34.429506 seconds.
+
+Example #4
+    Claim: A cloth mask protects people from COVID-19
+    Evidence: A single layer cotton cloth mask is unlikely to reduce risk of COVID-19 by more than 10%, however multiple layers and wearing the mask correctly could help protect people against COVID-19
+    Label Actual: mixture
+    Justification Actual: Protection from cloth masks depends on the number of layers and correct usage
+
+    Please standby, processing.......
+
+    Created claim and evidence knowledge graphs......
+    Cleaned both knowledge graphs to avoid redundancies......
+    Completed evidence retrieval and entailment scoring......
+
+    Actual Verdict:  Not Enough Information
+    Predicted Verdict:  Contradicts
+
+    Actual Justification:  Protection from cloth masks depends on the number of layers and correct usage
+    Produced Justification:  The main subject of COVID-19 is cloth mask.
+
+    Time Taken to Fact Check: 23.174415 seconds.
+
